@@ -1,0 +1,14 @@
+{
+  "name": "tech-book-club-landing-page",
+  "version": "1.0.0",
+  "description": "Frontend-mentor tech-book website challange",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "sass sass/main.scss css/styles.css -w"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.83.0"
+  }
+}

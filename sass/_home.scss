@@ -1,0 +1,238 @@
+@use 'variables';
+@use 'mixins' as m;
+
+.wrapper {
+  max-width: 117rem;
+  margin-inline: auto;
+}
+
+.grid {
+  display: grid;
+  gap: var(--spacing-5xl);
+
+  @include m.respond(md) {
+    &--cols-3 {
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--spacing-xxxl);
+    }
+  }
+
+  @include m.respond(xlg) {
+    &--cols-2 {
+      align-items: center;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--spacing-8xl);
+    }
+
+    &--cols-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+.block {
+  margin-top: var(--spacing-7xl);
+  padding: 0 var(--spacing-xl);
+
+  @include m.respond(md) {
+    padding-inline: var(--spacing-3xl);
+  }
+
+  @include m.respond(xlg) {
+    margin-top: var(--spacing-9xl);
+  }
+}
+
+.block--gradient {
+  background: linear-gradient(
+      107deg,
+      var(--color-gray-dark-2) 61.84%,
+      var(--color-primary-lit-2)
+    ),
+    url('../assets/images/pattern-light-bg.svg');
+  background-size: cover;
+}
+
+.img-block {
+  border-radius: var(--spacing-lg);
+  display: block;
+  width: 100%;
+}
+
+.u-margin-bottom-sm {
+  margin-bottom: var(--spacing-xxxl);
+}
+
+.u-margin-bottom-md {
+  margin-bottom: var(--spacing-4xl);
+}
+
+.u-margin-bottom-lg {
+  margin-bottom: var(--spacing-7xl);
+}
+
+.u-center-text {
+  text-align: center;
+}
+
+// Main header
+.main-header {
+  padding: var(--spacing-xxxl) var(--spacing-xl) var(--spacing-8xl);
+
+  @include m.respond(md) {
+    padding-block-start: var(--spacing-3xl);
+    padding-inline: var(--spacing-3xl);
+  }
+}
+
+.main-nav {
+  margin-bottom: var(--spacing-6xl);
+}
+
+.heading-primary {
+  background: linear-gradient(107deg, #fea36f -11.37%, #062630 61.84%);
+  background-clip: text;
+  color: transparent;
+  display: flex;
+  flex-direction: column;
+}
+
+//Block Hero
+.block--hero {
+  row-gap: var(--spacing-8xl);
+}
+
+.hero {
+  &__tagline {
+    margin-block-start: var(--spacing-xxxl);
+    margin-block-end: var(--spacing-4xl);
+  }
+}
+
+// block read together
+.block--read__content {
+  @include m.respond(xlg) {
+    order: 2;
+  }
+}
+
+// block book club
+.block--book-club {
+  position: relative;
+
+  &::before {
+    content: url('../assets/images/logos-tech.svg');
+    display: block;
+    height: 138px;
+    position: absolute;
+    left: 50%;
+    bottom: 3.1rem;
+    transform: translateX(-33%);
+  }
+}
+
+.block--how-it-work {
+  display: none;
+  padding-block: var(--spacing-8xl);
+
+  @include m.respond(xlg) {
+    display: block;
+  }
+}
+
+.how-it-work__order {
+  display: flex;
+  counter-reset: value;
+  gap: var(--spacing-6xl);
+  max-width: 105rem;
+  margin-inline: auto;
+}
+
+.order__count {
+  align-items: center;
+  counter-increment: value;
+  display: flex;
+  justify-content: space-between;
+
+  &::before {
+    align-items: center;
+    border: 2px solid var(--color-primary);
+    border-radius: var(--spacing-xs);
+    content: counter(value);
+    display: flex;
+    font-size: 2.4rem;
+    height: 4rem;
+    justify-content: center;
+    width: 4rem;
+  }
+}
+
+// Block Plan
+.plan__heading {
+  margin-bottom: var(--spacing-xxxl);
+
+  @include m.respond(xlg) {
+    margin-bottom: var(--spacing-7xl);
+  }
+}
+
+// block testamonials
+.quote {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3xl);
+  max-width: 97rem;
+
+  @include m.respond(xlg) {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+// footer
+.footer {
+  background-image: url('../assets/images/pattern-dark-bg.svg');
+  background-color: var(--color-primary);
+  background-size: cover;
+  color: var(--color-white);
+  margin-top: var(--spacing-7xl);
+  padding: var(--spacing-6xl) var(--spacing-xl) 0;
+
+  @include m.respond(md) {
+    padding-inline: var(--spacing-4xl);
+  }
+
+  @include m.respond(xlg) {
+    margin-top: var(--spacing-9xl);
+    padding: var(--spacing-8xl) var(--spacing-10xl) 0 var(--spacing-10xl);
+  }
+}
+
+.callout {
+  display: grid;
+  justify-items: center;
+  margin-bottom: var(--spacing-7xl);
+  max-width: 75.3rem;
+  margin-inline: auto;
+}
+
+.callout__heading {
+  margin-bottom: var(--spacing-5xl);
+}
+.callout__review {
+  margin-top: var(--spacing-xxxl);
+}
+
+.copyright {
+  align-items: center;
+  border-top: 1px solid var(--color-primary-lit);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+  padding: var(--spacing-xxxl) var(--spacing-3xl);
+
+  @include m.respond(md) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}

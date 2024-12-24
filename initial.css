@@ -1,0 +1,87 @@
+h1 {
+  font-size: 6.2rem;
+  letter-spacing: -2px;
+  background: linear-gradient(107deg, #fea36f -11.37%, #062630 61.84%);
+  background-clip: text;
+  color: transparent;
+  display: flex;
+  flex-direction: column;
+}
+
+.section {
+  background-image: url('../assets/images/pattern-light-bg.svg');
+  background-size: cover;
+  position: relative;
+  border-bottom: 2px solid dodgerblue;
+  padding: 4rem;
+  /* animation: pupup 1s ease-in; */
+}
+
+.section::after {
+  content: url('../assets/images/pattern-glow.svg');
+  width: 684px;
+  height: 684px;
+  background-size: cover;
+  position: absolute;
+  right: 0;
+  top: -15rem;
+  bottom: 50%;
+  transform: translateY(50%);
+  border-radius: 684px;
+}
+
+.grid {
+  margin-inline: auto;
+  width: 1174px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 64px;
+}
+
+/* adjust this styles for the final  */
+.section {
+  background-image: url('../assets/images/pattern-light-bg.svg');
+
+  background-size: cover, contain;
+  background-repeat: no-repeat;
+
+  background-color: rgb(250, 245, 243);
+  background-color: rgb(250, 245, 243);
+
+  position: relative;
+  border-bottom: 2px solid dodgerblue;
+  padding: 8rem 3.2rem;
+  overflow: clip;
+}
+
+.section::after {
+  content: '';
+  background-image: url('../assets/images/pattern-glow.svg');
+  background: #9cc9da;
+  width: 684px;
+  height: 684px;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  right: -15%;
+  bottom: -20rem;
+  border-radius: 684px;
+  display: inline-block;
+  opacity: 0.4;
+  filter: blur(100px);
+}
+
+.hero {
+  width: 100%;
+  z-index: 2;
+}
+
+.grid {
+  margin-inline: auto;
+  width: 1174px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 64px;
+}

@@ -1,0 +1,134 @@
+@use 'variables';
+@use 'mixins' as m;
+
+/* inter-regular - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../assets/fonts/inter/inter-v18-latin-regular.woff2')
+    format('woff2');
+}
+
+/* martian-mono-regular - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Martian Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../assets/fonts/martian-mono/martian-mono-v3-latin-regular.woff2')
+    format('woff2');
+}
+
+/* martian-mono-600 - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Martian Mono';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../assets/fonts/martian-mono/martian-mono-v3-latin-600.woff2')
+    format('woff2');
+}
+
+/* martian-mono-700 - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Martian Mono';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../assets/fonts/martian-mono/martian-mono-v3-latin-700.woff2')
+    format('woff2');
+}
+
+body {
+  color: var(--color-primary-lit);
+  font-family: 'inter', sans-serif;
+  font-size: 2rem;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-primary);
+  font-family: 'Martian Mono', sans-serif;
+  letter-spacing: -2px;
+  line-height: normal;
+}
+
+.heading-primary {
+  font-size: 3.8rem;
+
+  @include m.respond(md) {
+    font-size: 6.2rem;
+  }
+}
+
+.heading-secondary {
+  font-size: 3.8rem;
+  font-weight: 600;
+
+  @include m.respond(md) {
+    font-size: 5rem;
+  }
+}
+
+.heading-secondary__sub {
+  background: url('../assets/images/pattern-circle.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.book-club__heading {
+  max-width: 53.4rem;
+}
+
+.heading-special {
+  font-size: 5rem;
+}
+
+.plan__heading {
+  @include m.respond(xlg) {
+    text-align: center;
+  }
+}
+
+.list--order {
+  color: var(--color-primary);
+  font-family: 'Martian Mono', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+// quote
+.quote__text {
+  color: var(--color-primary-lit);
+  font-family: 'Martian Mono', sans-serif;
+  font-size: 2.4rem;
+  font-weight: 600;
+
+  @include m.respond(md) {
+    font-size: 3.4rem;
+  }
+}
+
+// footer
+.callout__heading {
+  font-size: 3.4rem;
+  color: var(--color-white);
+  text-align: center;
+
+  @include m.respond(md) {
+    font-size: 5rem;
+  }
+}
+
+.copyright__text {
+  font-family: 'Martian Mono', sans-serif;
+  font-size: 1.4rem;
+}
